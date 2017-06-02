@@ -214,8 +214,8 @@ def fast_closest_pair_elegant(cluster_list):
         half_len = list_len / 2
         left_half = [cluster_list[idx] for idx in range(0, half_len)]
         right_half = [cluster_list[idx] for idx in range(half_len, list_len)]
-        left_result = fast_closest_pair(left_half)
-        right_result = fast_closest_pair(right_half)
+        left_result = fast_closest_pair_elegant(left_half)
+        right_result = fast_closest_pair_elegant(right_half)
         right_result = (right_result[0], right_result[1]+half_len, right_result[2]+half_len)
         temp_result = min(left_result, right_result, key=lambda cluster: cluster[0])
         mid = (cluster_list[half_len-1].horiz_center() + cluster_list[half_len].horiz_center()) / 2
